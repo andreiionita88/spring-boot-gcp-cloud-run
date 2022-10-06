@@ -1,0 +1,6 @@
+steps:
+  - id: "publish"
+    name: "gcr.io/cloud-builders/mvn"
+    args:
+      - "compile"
+      - "jib:build"
