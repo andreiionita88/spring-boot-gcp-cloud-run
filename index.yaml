@@ -1,0 +1,6 @@
+indexes:
+  - kind: post
+    properties:
+      - name: createdBy
+      - name: createdAt
+        direction: desc
