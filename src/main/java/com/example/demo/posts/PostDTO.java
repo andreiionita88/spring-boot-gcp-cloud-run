@@ -1,8 +1,12 @@
 package com.example.demo.posts;
 
-import java.time.Instant;
+import java.io.Serial;
+import java.io.Serializable;
 
-public class PostDTO {
+public class PostDTO implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 7156526077883281623L;
 
     private String text;
     private Long createdBy;
