@@ -37,6 +37,7 @@ public class PostController {
     @Cacheable(cacheNames = POST_CACHE, key="#userId")
     @GetMapping("/last/{userId}")
     public PostDTO getLatestPost(@PathVariable Long userId) {
+        logger.info("ONLY VISIBLE FOR THIS REVISION");
         Post result = repository.findTopByCreatedBy(
                     userId,
                     Sort.by(Sort.Order.desc("createdAt"))
