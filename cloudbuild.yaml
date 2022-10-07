@@ -1,18 +1,18 @@
 steps:
-  - id: "publish"
-    name: "gcr.io/cloud-builders/mvn"
+  - id: publish
+    name: gcr.io/cloud-builders/mvn
     args:
-      - "compile"
-      - "jib:build"
-  - id: "deploy"
-    name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+      - compile
+      - jib:build
+  - id: deploy
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk
     args:
       - run
       - deploy
-      - "demo-application"
-      - "--image"
-      - 'gcr.io/jovial-sunrise-363621/demo-application',
+      - demo-application
+      - '--image'
+      - gcr.io/jovial-sunrise-363621/demo-application,
       - '--region'
-      - 'us-west1'
+      - us-west1
 images:
-  - "gcr.io/jovial-sunrise-363621/demo-application"
+  - gcr.io/jovial-sunrise-363621/demo-application
