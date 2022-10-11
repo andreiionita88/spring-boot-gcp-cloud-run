@@ -12,7 +12,7 @@ import org.springframework.data.redis.serializer.RedisSerializationContext;
 
 import java.time.Duration;
 
-@SpringBootConfiguration
+@Configuration
 public class AppConfig {
 
     @Profile("caching")

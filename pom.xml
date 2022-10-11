@@ -56,6 +56,13 @@
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>google-cloud-pubsub</artifactId>
+			<version>1.120.20</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -75,6 +82,11 @@
 					<to>
 						<image>gcr.io/jovial-sunrise-363621/demo-application</image>
 					</to>
+					<container>
+						<environment>
+							<spring.profiles.active>caching</spring.profiles.active>
+						</environment>
+					</container>
 				</configuration>
 			</plugin>
 		</plugins>
