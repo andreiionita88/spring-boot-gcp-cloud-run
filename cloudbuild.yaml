@@ -11,7 +11,16 @@ steps:
       - run
       - deploy
       - demo-application
+      - '--set-env-vars'
+      - 'spring.profiles.active=caching'
+      - '--set-env-vars'
+      - 'spring.redis.host=${_REDIS_INSTANCE_IP}'
       - '--image'
       - gcr.io/jovial-sunrise-363621/demo-application
       - '--region'
       - us-west1
+      - '--vpc-connector'
+      - '${_VPC_CONNECTOR}'
+substitutions:
+  _REDIS_INSTANCE_IP: 10.72.225.3
+  _VPC_CONNECTOR: cloud-run
