@@ -16,9 +16,9 @@ steps:
       - '--set-env-vars'
       - 'spring.redis.host=${_REDIS_INSTANCE_IP}'
       - '--image'
-      - gcr.io/jovial-sunrise-363621/demo-application
+      - 'gcr.io/$PROJECT_ID/posts-demo-application'
       - '--region'
-      - us-west1
+      - 'us-west1'
       - '--vpc-connector'
       - '${_VPC_CONNECTOR}'
 substitutions:
