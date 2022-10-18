@@ -3,6 +3,8 @@
 The application creates users and posts and retrieves the latest post for a given user.
 
 ## Prerequisites
+[JDK 17](https://jdk.java.net/archive/)
+
 APIs
  - Container Registry - our build pushes containers. 
  - Cloud Run - this is where we'll run our app
@@ -23,9 +25,9 @@ When running the application locally, if you want to enable caching, remember to
 ```
 mvn spring-boot:run -Dspring-boot.run.profiles=caching
 ```
-
-Windows: https://redis.io/docs/getting-started/installation/install-redis-on-windows/
-Docker: https://redis.io/docs/stack/get-started/install/docker/
+You can run a Redis instance locally:
+ - standalone on [Windows](https://redis.io/docs/getting-started/installation/install-redis-on-windows/)
+ - in a [Docker](https://redis.io/docs/stack/get-started/install/docker/) container 
 
 ## Deployment
 The application can be deployed to Cloud Run by:
