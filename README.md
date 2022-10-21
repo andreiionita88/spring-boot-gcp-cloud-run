@@ -5,19 +5,19 @@ The application creates users and posts and retrieves the latest post for a give
 ## Prerequisites
 [JDK 17](https://jdk.java.net/archive/)
 
+You **must** change the GCP project ID in the pom file (`gcp.project.name`)
+
 APIs
  - Container Registry - our build pushes containers. 
  - Cloud Run - this is where we'll run our app
  - Datastore - for storing and reading our application's data
  - Pub / Sub - for publishing messages upon post creation
 
-For caching you need to create a small Redis Memorystore instance, then enable the Serverless VPC Access API and create a connector.
+For **caching** you need to create a small Redis Memorystore instance, then enable the Serverless VPC Access API and create a connector.
 This will allow you to connect to various services within your VPC (like Memorystore or Cloud SQL instances)
 
-For publishing via Pub / Sub you need to create a topic named `posts`. 
+For **publishing** via Pub / Sub you need to create a topic named `posts`. 
 If you want to consume messages you will also need to create a subscription
-
-Change the GCP project ID in the pom file (`gcp.project.name`)
 
 ## Running
 
